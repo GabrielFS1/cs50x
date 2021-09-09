@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int print_even(int arr[], int n)
 {
@@ -84,7 +85,7 @@ int main(void)
 
     scanf("%d", &n);
 
-    int nums[n];
+    int *nums = malloc(sizeof(int) * n);
 
     for (i = 0; i < n; i++)
     {
