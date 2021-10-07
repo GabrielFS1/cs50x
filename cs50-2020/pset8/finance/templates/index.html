@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portifolio
+{% endblock %}
+
+{% block main %}
+<table>
+
+    <th>Symbol</th>
+    <th>Name</th>
+    <th>Shares</th>
+    <th>Quote Price</th>
+    <th>Total</th>
+
+        {% for row in rows %}
+        <tr>
+            <td>{{ row["symbol"] }} </td>
+            <td>{{ row["name"] }}</td>
+            <td>{{ row["SUM(shares)"] }}</td>
+            <td>{{ r[row["symbol"]] }}</td>
+            <td>{{ t[row["symbol"]] }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td>Cash</td> <td colspan="3"></td>
+            <td>{{ cash }}</td>
+        </tr>
+
+        <tr style="background-color:white">
+            <td colspan="4"></td>
+            <td>{{ total }}</td>
+            </tr>
+
+</table>
+<p class="text_cash"><a href="/add">Add Cash</a></p>
+
+{% endblock %}

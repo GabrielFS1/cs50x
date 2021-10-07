@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portifolio
+{% endblock %}
+
+{% block main %}
+<table style="width:100%">
+
+
+    <th>Symbol </th>
+    <th>Shares</th>
+    <th>Price</th>
+    <th>Time</th>
+
+    {% for row in rows %}
+        <tr>
+            <td>{{ row["symbol"] }} </td>
+            <td>{{ row["shares"] }}</td>
+            <td>{{ row["quote_price"] }}</td>
+            <td>{{ row["time"] }} </td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
